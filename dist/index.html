@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4300cdd917.js" crossorigin="anonymous" defer></script>
     <title>Todo List</title>
 </head>
 <body>
-    
+    <div class="content">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-button">
+                <button id="sidebarButton"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <div id="sidebarContent">
+                <button id="homeButton"><i class="fas fa-envelope" id="homeIcon"></i><span>Main</span></button>
+                <button id="todayButton"><i class="fa-solid fa-calendar-xmark"></i></i></i><span>Today</span></button>
+                <button id="weekButton"><i class="fa-solid fa-calendar-days"></i></i><span>Week</span></button>
+
+                <div id="projects-wrapper">
+                    <h3>Projects</h3>
+                    <div id="projects">
+                        <button><span>#</span><span>Work Stuff</span></button>
+                    </div>
+                </div>
+
+                <div id="taskButton">
+                    <button id="newTaskBtn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-container" id="modalContainer">
+            <div id="taskModal" class="modal">
+                <button id="closeButton"><i class="fa-solid fa-x"></i></button>
+                <div class="modal-content">
+                    <form action="">
+                    </form>
+                </div>
+            </div>
+        </div> 
+
+        <div class="tasks-container">
+
+        </div>
+    </div>
+
+
     <script src="main.js"></script>
 </body>
 </html>

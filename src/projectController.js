@@ -27,4 +27,10 @@ function getProjectIndex(project){
     return projectIndex;
 }
 
-export {Projects, getNewProject, addProject, removeProject, getProjectIndex};
+function editProject(project, newTitle){
+    if(project.title !== newTitle && newTitle !== NaN){
+        project.title = newTitle;
+    }   
+}
+
+export {Projects, getNewProject, addProject, removeProject, getProjectIndex, editProject};

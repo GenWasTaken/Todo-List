@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --light-color: rgb(242, 242, 242);
+    --icon-background-color: rgba(228, 228, 228, 1);
+    --grey-font-color: rgba(46, 40, 40, 0.7);
+    --main-font-color: #262626;
+    --main-red-color: #c73541;
+    --light-red-color: #c73541d7;
+
+    --base-font-size: calc(1vh + 1vw);
+
+    --transition-time: .25s ease-in-out;
+    --button-transition-time: .15s;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: var(--base-font-size);
+    font-family: "Inter", sans-serif;
+    color: var(--main-font-color);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0fr 4fr;
+    background-color: white;
+    transition: all var(--transition-time);
+}
+
+.sidebar {
+    background-color: var(--light-color);
+    height: 100%;
+    width: 0%;
+    transition: all var(--transition-time);
+}
+
+.sidebar-button {
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+    padding-bottom: 0;
+    margin-left: 30px;
+    
+}
+
+#sidebarButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 5px 8px;
+    border-radius: 10px;
+    transition: all var(--button-transition-time);
+}
+
+#sidebarButton:hover {
+    background: var(--icon-background-color);
+    transition: all var(--button-transition-time);
+}
+
+.sidebar i {
+    color: var(--grey-font-color);
+    font-size: 1rem;
+}
+
+#sidebarContent {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#sidebarContent button {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#sidebarContent button:hover{
+    background: var(--light-red-color);
+    border-radius: 30px;
+    transition: all var(--transition-time), border-radius .15s;
+}
+
+#sidebarContent i, span {
+    font-size: var(--base-font-size);
+    font-weight: 500;
+}
+
+#projects-wrapper {
+    margin-top: 20px;
+}
+
+#projects {
+    padding: 15px;
+}
+
+#taskButton {
+    align-self: center;
+}
+
+#taskButton button {
+    background: var(--light-red-color);
+    border-radius: 30px;
+}
+
+#taskButton button:hover {
+    background-color: var(--main-red-color);
+}
+
+#taskButton i {
+    color: var(--main-font-color);
+}
+
+#modalContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+#taskModal {
+    width: 50%;
+    height: 55%;
+    background: var(--light-color);
+    border-left: 10px solid var(--main-red-color);
+    pointer-events: all;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 8px;
+}
+
+
+#closeButton {
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: none;
+    font-size: var(--base-font-size);
+}
+
+#closeButton i {
+    color: var(--main-font-color);
+    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
+}
+
+.tasks-container {
+    background-color: var(--light-color);
+    border-left: var(--grey-font-color)  1px solid;
+    margin: 5%;
+}
