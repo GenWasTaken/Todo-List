@@ -33,11 +33,20 @@
 
         <div class="modal-container" id="modalContainer">
             <div id="taskModal" class="modal">
-                <button id="closeButton"><i class="fa-solid fa-x"></i></button>
                 <div class="modal-content">
-                    <form action="">
+                    <form id="modalForm" action="">
+                        <input type="text" id="fTitle" name="fTitle" placeholder="Task name">
+                        <input type="text" id="fDesc" name="fDesc" placeholder="Description">
+                        <div class="fButtons">
+                            <button id="fDuedate"><i class="fa-solid fa-calendar-days"></i><span>Due date</span></button>
+                            <button id="fPriority"><i class="fa-regular fa-flag"></i><span>Priority</span></button>
+                        </div>
                     </form>
                 </div>
+                <div class="modal-buttons">
+                    <button id="closeButton">Cancel</button>
+                    <button id="submitButton">Add task</button>
+                </div>  
             </div>
         </div> 
 

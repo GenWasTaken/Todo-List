@@ -29,4 +29,8 @@ function getTaskCard(task, container){
     container.appendChild(date);
 }
 
+function loadModalForm(){
+    
+}
+
 export {loadTasks, getTaskCard};

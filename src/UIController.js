@@ -3,6 +3,7 @@ import Project from "./classes/project.js";
 import {Projects, getNewProject, addProject, removeProject, getProjectIndex, editProject} from "./projectController.js";
 import {loadTasks, getTaskCard} from "./UIGenerator.js";
 import {closeTaskModal, openTaskModal} from "./modalButtonEvent.js";
+import { clearInput } from "./modalForumEvent.js";
 
 //**get the base task container done**
 //add a simple button for creating a new task inside each Project
@@ -26,11 +27,13 @@ const toggleSidebarModal = (function(){
     });
 })()
 
-const toggleTaskCards = (function(){
-    const tasksArray = Project.getTasks();
-
-    loadTasks(tasksArray);
-})();
 
 
-export {toggleSidebarModal, toggleTaskCards};
+// const toggleTaskCards = (function(){
+//     const tasksArray = Project.getTasks();
+
+//     loadTasks(tasksArray);
+// })();
+
+
+export {toggleSidebarModal};

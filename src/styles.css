@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
+    --main-white-color: #FFFFFF;
     --light-color: rgb(242, 242, 242);
     --icon-background-color: rgba(228, 228, 228, 1);
     --grey-font-color: rgba(46, 40, 40, 0.7);
+    --lighter-font-color: #444444;
     --main-font-color: #262626;
     --main-red-color: #c73541;
     --light-red-color: #c73541d7;
+    --dark-red-color: #941c26;
 
-    --base-font-size: calc(1vh + 1vw);
+    --bigger-font-size: calc(1.2 * var(--base-font-size));
+    --base-font-size: calc(1.2 * 1rem);
+    --small-font-size: calc(.8 * var(--base-font-size));
 
     --transition-time: .25s ease-in-out;
     --button-transition-time: .15s;
@@ -33,7 +38,7 @@ html, body {
     height: 100%;
     display: grid;
     grid-template-columns: 0fr 4fr;
-    background-color: white;
+    background-color: var(--main-white-color);
     transition: all var(--transition-time);
 }
 
@@ -88,17 +93,20 @@ html, body {
     gap: 10px;
     padding: 10px 20px;
     cursor: pointer;
+    color: var(--lighter-font-color);
 }
 
 #sidebarContent button:hover{
-    background: var(--light-red-color);
+    background: var(--main-red-color);
     border-radius: 30px;
-    transition: all var(--transition-time), border-radius .15s;
+    color: var(--main-white-color);
+    transition: all var(--transition-time), border-radius .15s; 
 }
 
 #sidebarContent i, span {
     font-size: var(--base-font-size);
     font-weight: 500;
+    color: inherit;
 }
 
 #projects-wrapper {
@@ -114,16 +122,17 @@ html, body {
 }
 
 #taskButton button {
-    background: var(--light-red-color);
+    background: var(--main-red-color);
     border-radius: 30px;
+    padding: 10px 12px;
 }
 
 #taskButton button:hover {
-    background-color: var(--main-red-color);
+    background-color: var(--dark-red-color);
 }
 
 #taskButton i {
-    color: var(--main-font-color);
+    color: var(--main-white-color);
 }
 
 #modalContainer {
@@ -138,27 +147,97 @@ html, body {
 
 #taskModal {
     width: 50%;
-    height: 55%;
-    background: var(--light-color);
+    height: auto;
+    background: var(--main-white-color);
     border-left: 10px solid var(--main-red-color);
     pointer-events: all;
     padding: 15px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 8px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 8px 7px 20px, rgba(0, 0, 0, 0.2) -8px -7px 20px,  rgba(0, 0, 0, 0.3) 0px 3px 8px;
 }
 
+#modalForm {
+    padding: 15px;
+    border-bottom: 1px solid var(--grey-font-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#fTitle {
+    color: var(--main-font-color);
+    font-size: var(--bigger-font-size);
+}
+
+#fDesc {
+    color: var(--grey-font-color);
+    font-size: var(--small-font-size);
+}
+
+#fTitle, #fDesc {
+    padding: 5px;
+    border: none;
+}
+
+#fTitle:focus, #fDesc:focus {
+    outline: none;
+}
+
+.fButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: end;
+}
+
+.fButtons button {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background: var(--main-white-color);
+    border: 1px solid var(--grey-font-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+}
+
+.fButtons button span {
+    font-size: var(--small-font-size);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    padding: 0px 15px;
+}
 
 #closeButton {
     cursor: pointer;
-    padding: 10px;
+    padding: 8px;
+    border-radius: 8px;
     border: none;
-    background: none;
+    background: var(--light-color);
     font-size: var(--base-font-size);
 }
 
-#closeButton i {
-    color: var(--main-font-color);
-    text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
+#submitButton {
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: var(--main-red-color);
+    font-size: var(--base-font-size);
+    color: var(--main-white-color);
+    transition: all var(--button-transition-time);
+}
+
+#submitButton:hover {
+    background: var(--dark-red-color);
+    transition: all var(--button-transition-time);
 }
 
 .tasks-container {

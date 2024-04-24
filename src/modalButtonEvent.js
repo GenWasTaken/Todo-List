@@ -14,8 +14,16 @@ function closeTaskModal(){
 
     if(modalContainer.style.display === "flex"){
         modalContainer.style.display = "";
-        modalContent.innerHTML = "";
+        clearForumInput();
     }
 }
 
-export {openTaskModal, closeTaskModal};
+function clearForumInput(){
+    const titleInput = document.getElementById("fTitle");
+    const descInput = document.getElementById("fDesc");
+
+    titleInput.value = "";
+    descInput.value = "";
+}
+
+export {openTaskModal, closeTaskModal, clearForumInput};
